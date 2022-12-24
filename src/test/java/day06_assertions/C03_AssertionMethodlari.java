@@ -2,6 +2,7 @@ package day06_assertions;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.AfterClass;
+import org.junit.Assert;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import org.openqa.selenium.By;
@@ -42,11 +43,7 @@ public class C03_AssertionMethodlari {
         String expectedKelime = "Amazon";
         String actualTitle = driver.getTitle();
 
-        if (actualTitle.contains(expectedKelime)) {
-            System.out.println("Amazon gidis testi PASSED");
-        } else {
-            System.out.println("Amazon gidis testi FAILED");
-        }
+        Assert.assertTrue("Title Amazon icermiyor",actualTitle.contains(expectedKelime));
     }
 
     @Test
@@ -59,11 +56,7 @@ public class C03_AssertionMethodlari {
         WebElement sonucYaziElementi = driver.findElement(By.xpath("//h1[@class='a-size-base s-desktop-toolbar a-text-normal']"));
         String sonucYazisiStr = sonucYaziElementi.getText();
 
-        if (sonucYazisiStr.contains(expectedKelime)) {
-            System.out.println("Nutella arama testi PASSED");
-        } else {
-            System.out.println("Nutella arama testi FAILED");
-        }
+        Assert.assertTrue(sonucYazisiStr.contains(expectedKelime));
 
     }
 
@@ -79,11 +72,7 @@ public class C03_AssertionMethodlari {
 
         int expectedAramaSonucusayisi = 50;
 
-        if (actualSonucAdediInt > expectedAramaSonucusayisi) {
-            System.out.println("Nutella arama sonuc sayisi testi PASSED");
-        } else {
-            System.out.println("Nutella arama sonuc sayisi testi FAILED");
-        }
+        Assert.assertTrue(actualSonucAdediInt>expectedAramaSonucusayisi);
 
     }
 }
