@@ -54,15 +54,17 @@ public class C03_Cookies extends TestBase {
         //6- eklediginiz cookie’nin sayfaya eklendigini test edin
 
         expectedCookieDegeri="cikolatali";
-        actualCookieDegeri="";
+        int cikolataliCookieSayisi=0;
+
         for (Cookie eachCookie:cookiesSeti
         ) {
 
             if (eachCookie.getName().equals("en sevdigim cookie")){
-                actualCookieDegeri=eachCookie.getValue();
+                cikolataliCookieSayisi++;
             }
 
         }
+        Assert.assertTrue(cikolataliCookieSayisi>0);
 
         //7- ismi skin olan cookie’yi silin ve silindigini test edin
 
