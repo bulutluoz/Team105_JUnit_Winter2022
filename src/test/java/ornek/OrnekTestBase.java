@@ -26,10 +26,13 @@ public class OrnekTestBase extends TestBase {
         passwordKutusu.sendKeys("Az.123123123");
 
         WebElement loginButonu= driver.findElement(By.xpath("//button[text()='Login']"));
+        loginButonu.click();
+        Thread.sleep(1000);
+        kullaniciEmailKutusu= driver.findElement(By.id("login-email"));
 
         Assert.assertTrue(kullaniciEmailKutusu.isDisplayed());
 
-        Thread.sleep(3000);
+
     }
 
     @Test
@@ -46,10 +49,12 @@ public class OrnekTestBase extends TestBase {
         passwordKutusu.sendKeys("123456");
 
         WebElement loginButonu= driver.findElement(By.xpath("//button[text()='Login']"));
-
+        loginButonu.click();
+        Thread.sleep(1000);
+        kullaniciEmailKutusu= driver.findElement(By.id("login-email"));
         Assert.assertTrue(kullaniciEmailKutusu.isDisplayed());
 
-        Thread.sleep(3000);
+
     }
 
     @Test
@@ -66,9 +71,12 @@ public class OrnekTestBase extends TestBase {
         passwordKutusu.sendKeys("123456");
 
         WebElement loginButonu= driver.findElement(By.xpath("//button[text()='Login']"));
+        loginButonu.click();
 
+        Thread.sleep(1000);
+        kullaniciEmailKutusu= driver.findElement(By.id("login-email"));
         Assert.assertTrue(kullaniciEmailKutusu.isDisplayed());
 
-        Thread.sleep(3000);
+
     }
 }

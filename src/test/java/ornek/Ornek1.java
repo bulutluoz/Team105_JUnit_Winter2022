@@ -38,10 +38,13 @@ public class Ornek1 {
         passwordKutusu.sendKeys("Az.123123123");
 
         WebElement loginButonu= driver.findElement(By.xpath("//button[text()='Login']"));
+        loginButonu.click();
 
+        Thread.sleep(1000);
+        kullaniciEmailKutusu= driver.findElement(By.id("login-email"));
         Assert.assertTrue(kullaniciEmailKutusu.isDisplayed());
 
-        Thread.sleep(3000);
+
         driver.close();
     }
 
@@ -63,10 +66,13 @@ public class Ornek1 {
         passwordKutusu.sendKeys("123456");
 
         WebElement loginButonu= driver.findElement(By.xpath("//button[text()='Login']"));
+        loginButonu.click();
 
+        Thread.sleep(1000);
+        kullaniciEmailKutusu= driver.findElement(By.id("login-email"));
         Assert.assertTrue(kullaniciEmailKutusu.isDisplayed());
 
-        Thread.sleep(3000);
+
         driver.close();
     }
 
@@ -88,10 +94,13 @@ public class Ornek1 {
         passwordKutusu.sendKeys("123456");
 
         WebElement loginButonu= driver.findElement(By.xpath("//button[text()='Login']"));
+        loginButonu.click();
 
+        Thread.sleep(1000);
+        kullaniciEmailKutusu= driver.findElement(By.id("login-email"));
         Assert.assertTrue(kullaniciEmailKutusu.isDisplayed());
 
-        Thread.sleep(3000);
+
         driver.close();
     }
 
